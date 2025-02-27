@@ -26,8 +26,12 @@ React와 Recoil을 사용하여 상태 관리를 최적화하고, 페이지네�
 npm install
 ```
 
-# 개발 서버 실행
+# 🚀 개발 서버 실행
 
 ```sh
 npm run dev
 ```
+
+# 🎥 참고 자료
+
+- [유튜브 강의: 2024 React Full Course (feat. Recoil)](https://youtu.be/Yv5tSNr4h2c?si=Oh6e_AEXCmim5zmA) - 이 강의를 통해 React와 Recoil을 활용한 상태 관리 및 API 연동 방법을 배웠습니다.
