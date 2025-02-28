@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // 자식 요소들을 양 끝에 배치하여 간격을 최대로 벌립니다.
+
+  width: 100%;
+  height: 56px;
+
+  // 로고박스
+  &__logoBox {
+    display: flex;
+    align-items: center;
+
+    gap: 8px; // 자식 요소들을 양 끝에 배치하여 간격을 최대로 벌립니다.
+
+    cursor: pointer;
+
+    &__logo {
+      max-width: 80px; // 로고의 최대 너비를 80px로 설정하여, 크기가 커지는 것을 방지합니다.
+      height: auto;
+    }
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+
+  // 프로필 박스
+  &__profileBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px; //자식 요소들 간의 간격을 16px로 설정합니다.
+
+    &__button {
+      outline: none;
+      cursor: pointer;
+
+      padding: 6px 10px; // 버튼 안쪽 여백을 위/아래 6px, 좌/우 10px로 설정합니다.
+
+      border: 1px solid;
+    }
+    &__user {
+      font-weight: 500; // 사용자 이름의 글꼴 두께를 400으로 설정합니다.
+      font-size: 15px; // 사용자 이름의 글꼴 크기를 15px로 설정합니다.
+    }
+  }
+}
