@@ -1,0 +1,6 @@
+.page {
+  display: flex; /* Flexbox 컨테이너 */
+  flex-direction: column; /* 자식 요소들을 세로로 배치 */
+  align-items: center; /* 자식 요소들을 세로로 가운데 정렬 */
+  justify-content: flex-start; /* 자식 요소들을 상단에 배치 */
+}
