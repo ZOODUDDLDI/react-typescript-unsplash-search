@@ -39,9 +39,11 @@
 
       padding: 6px 10px; // 버튼 안쪽 여백을 위/아래 6px, 좌/우 10px로 설정합니다.
 
-      border: 1px solid;
+      border: 1px solid main.$color-white-600;
+      background-color: main.$color-white-000;
     }
     &__user {
+      color: main.$color-white-600;
       font-weight: 500; // 사용자 이름의 글꼴 두께를 400으로 설정합니다.
       font-size: 15px; // 사용자 이름의 글꼴 크기를 15px로 설정합니다.
     }

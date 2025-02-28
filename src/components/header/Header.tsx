@@ -14,7 +14,7 @@ function Header() {
       </div>
       {/* 프로필 박스 */}
       <div className={styles.header__profileBox}>
-        <button className={styles.header__profileBox__bookmark}>북마크</button>
+        <button className={styles.header__profileBox__button}>북마크</button>
         <span className={styles.header__profileBox__user}>
           한주영 | HANJUYOUNG
         </span>
