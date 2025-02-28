@@ -19,4 +19,13 @@ export default defineConfig({
       "@apis": fileURLToPath(new URL("./src/apis", import.meta.url)),
     },
   },
+
+  // SCSS 전역 사용
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: "@import *./src/assets/styles/main.scss",
+      },
+    },
+  },
 });
