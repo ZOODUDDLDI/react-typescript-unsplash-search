@@ -1,0 +1,23 @@
+[
+  {
+    "index": 0,
+    "path": "/search/menu1",
+    "label": "메뉴1",
+    "searchValue": "menu1",
+    "isActive": false
+  },
+  {
+    "index": 1,
+    "path": "/search/menu2",
+    "label": "메뉴2",
+    "searchValue": "menu2",
+    "isActive": false
+  },
+  {
+    "index": 3,
+    "path": "/search/menu3",
+    "label": "메뉴3",
+    "searchValue": "menu3",
+    "isActive": false
+  }
+]
