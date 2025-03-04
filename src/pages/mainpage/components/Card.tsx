@@ -7,7 +7,11 @@ function Card() {
   };
   return (
     <div className={styles.card} onClick={openDialog}>
-      <img src="" alt="" className={styles.card__image} />
+      <img
+        src="src/assets/images/beautiful-natural-image.jpg"
+        alt=""
+        className={styles.card__image}
+      />
     </div>
   );
 }
