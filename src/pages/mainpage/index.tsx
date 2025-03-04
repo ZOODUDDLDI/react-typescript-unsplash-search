@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+
 import Header from "@/components/header/Header";
 import Navigation from "@/components/navigation/Navigation";
 import SearchBar from "@/components/searchBar/SearchBar";
@@ -6,7 +8,18 @@ import Card from "./components/Card";
 
 import styles from "./index.module.scss";
 
+import { CardDTO } from "./types/card";
+import { imageData } from "@/recoil/selectors/imageSelectors";
+import { useRecoilStateLoadable } from "recoil";
+
 function index() {
+  const imageSelector = useRecoilStateLoadable(imageData);
+  const [imgData, setImgData] = useState<CardDTO>();
+
+  const CARD_LIST = useMemo(() => {
+    console.log(imageSelector);
+  });
+
   return (
     <div className={styles.page}>
       {/* 공통 헤더 */}
