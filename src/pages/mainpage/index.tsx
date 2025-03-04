@@ -2,6 +2,7 @@ import Header from "@/components/header/Header";
 import Navigation from "@/components/navigation/Navigation";
 import SearchBar from "@/components/searchBar/SearchBar";
 import Footer from "@/components/footer/Footer";
+import Card from "./components/Card";
 
 import styles from "./index.module.scss";
 
@@ -28,7 +29,8 @@ function index() {
             <SearchBar />
           </div>
         </div>
-        {/* */}
+        {/* 카드 */}
+        <Card />
       </div>
 
       {/* 공통 푸터 UI 부분 */}
