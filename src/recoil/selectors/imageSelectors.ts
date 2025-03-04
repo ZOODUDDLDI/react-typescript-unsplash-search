@@ -7,7 +7,7 @@ import { searchState } from "../atoms/searchState";
 import { pageState } from "../atoms/pageState";
 
 const API_URL = "https://api.unsplash.com/search/photos";
-const API_KEY = "";
+const API_KEY = import.meta.env.VITE_UNSPLASH_API_KEY;
 const PER_PAGE = 30;
 
 export const imageData = selector({
