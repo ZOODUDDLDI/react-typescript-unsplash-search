@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useRecoilValueLoadable } from "recoil";
 
 import Header from "@/components/header/Header";
 import Navigation from "@/components/navigation/Navigation";
@@ -10,15 +11,19 @@ import styles from "./index.module.scss";
 
 import { CardDTO } from "./types/card";
 import { imageData } from "@/recoil/selectors/imageSelectors";
-import { useRecoilStateLoadable } from "recoil";
 
-function index() {
-  const imageSelector = useRecoilStateLoadable(imageData);
-  const [imgData, setImgData] = useState<CardDTO>();
+function Index() {
+  const imgSelector = useRecoilValueLoadable(imageData);
 
   const CARD_LIST = useMemo(() => {
-    console.log(imageSelector);
-  });
+    console.log("데이터 : ", imgSelector);
+    if (imgSelector.state === "hasValue") {
+      const result = imgSelector.contents.results.map((card: CardDTO) => {
+        return <Card data={card} key={card.id} />;
+      });
+      return result;
+    }
+  }, [imgSelector]);
 
   return (
     <div className={styles.page}>
@@ -43,7 +48,7 @@ function index() {
           </div>
         </div>
         {/* 카드 */}
-        <Card />
+        <div className={styles.page__contents__imageBox}>{CARD_LIST}</div>
       </div>
 
       {/* 공통 푸터 UI 부분 */}
@@ -52,4 +57,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
