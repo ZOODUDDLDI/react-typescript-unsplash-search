@@ -1,8 +1,9 @@
-import styles from "./index.module.scss";
-
 import Header from "@/components/header/Header";
 import Navigation from "@/components/navigation/Navigation";
 import SearchBar from "@/components/searchBar/SearchBar";
+import Footer from "@/components/footer/Footer";
+
+import styles from "./index.module.scss";
 
 function index() {
   return (
@@ -31,6 +32,7 @@ function index() {
       </div>
 
       {/* 공통 푸터 UI 부분 */}
+      <Footer />
     </div>
   );
 }
