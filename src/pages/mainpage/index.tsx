@@ -17,13 +17,21 @@ function Index() {
   const imgSelector = useRecoilValueLoadable(imageData);
   // 상태
   const [open, setOpen] = useState<boolean>(false); // 다이얼로그 상태
+  const [imgData, setImgData] = useState<CardDTO>(); // 이미지 데이터를 저장할 상태
 
   // 카드 | Selecor 연동
   const CARD_LIST = useMemo(() => {
     // console.log("데이터 : ", imgSelector);
     if (imgSelector.state === "hasValue") {
       const result = imgSelector.contents.results.map((card: CardDTO) => {
-        return <Card data={card} key={card.id} handleDialog={setOpen} />;
+        return (
+          <Card
+            data={card}
+            key={card.id}
+            handleDialog={setOpen}
+            handleSetData={setImgData}
+          />
+        );
       });
       return result;
     }
@@ -57,7 +65,9 @@ function Index() {
 
       {/* 공통 푸터 UI 부분 */}
       <Footer />
-      {open && <CardDetialDialog handleDialog={setOpen} />}
+      {open && imgData && (
+        <CardDetialDialog data={imgData} handleDialog={setOpen} />
+      )}
     </div>
   );
 }
