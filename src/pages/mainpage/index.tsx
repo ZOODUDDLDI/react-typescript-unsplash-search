@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useRecoilValueLoadable } from "recoil";
 
 import Header from "@/components/header/Header";
@@ -6,6 +6,7 @@ import Navigation from "@/components/navigation/Navigation";
 import SearchBar from "@/components/searchBar/SearchBar";
 import Footer from "@/components/footer/Footer";
 import Card from "./components/Card";
+import CardDetialDialog from "@/components/dialog/CardDetialDialog";
 
 import styles from "./index.module.scss";
 
@@ -14,12 +15,15 @@ import { imageData } from "@/recoil/selectors/imageSelectors";
 
 function Index() {
   const imgSelector = useRecoilValueLoadable(imageData);
+  // 상태
+  const [open, setOpen] = useState<boolean>(false); // 다이얼로그 상태
 
+  // 카드 | Selecor 연동
   const CARD_LIST = useMemo(() => {
-    console.log("데이터 : ", imgSelector);
+    // console.log("데이터 : ", imgSelector);
     if (imgSelector.state === "hasValue") {
       const result = imgSelector.contents.results.map((card: CardDTO) => {
-        return <Card data={card} key={card.id} />;
+        return <Card data={card} key={card.id} handleDialog={setOpen} />;
       });
       return result;
     }
@@ -53,6 +57,7 @@ function Index() {
 
       {/* 공통 푸터 UI 부분 */}
       <Footer />
+      {open && <CardDetialDialog handleDialog={setOpen} />}
     </div>
   );
 }
