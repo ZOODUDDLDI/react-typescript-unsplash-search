@@ -7,6 +7,7 @@ import SearchBar from "@/components/searchBar/SearchBar";
 import Footer from "@/components/footer/Footer";
 import Card from "./components/Card";
 import CardDetialDialog from "@/components/dialog/CardDetialDialog";
+import Loading from "./components/Loading";
 
 import styles from "./index.module.scss";
 
@@ -34,6 +35,8 @@ function Index() {
         );
       });
       return result;
+    } else {
+      return <Loading />;
     }
   }, [imgSelector]);
 
